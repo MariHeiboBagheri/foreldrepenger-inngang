@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpackConfig = require('./webpack.config.global.js');
@@ -21,6 +20,11 @@ webpackConfig.plugins.push(
         outputPath: path.resolve(__dirname, '../../../dist/dev')
     })
 );
+
+webpackConfig.module.rules.push({
+    test: /\.less$/,
+    use: ['style-loader', 'css-loader', 'less-loader']
+});
 
 module.exports = Object.assign(webpackConfig, {
     devtool: 'inline-source-map'
