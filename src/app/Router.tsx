@@ -2,42 +2,39 @@ import * as React from 'react';
 import { Route, Redirect, Switch, withRouter } from 'react-router-dom';
 import SøkForeldrepenger from './pages/søk-foreldrepenger/SøkForeldrepenger';
 import Loadable from 'react-loadable';
-
-const Loading = ({ error }: { error: any }) => {
-    if (error) {
-        return <div>{error}</div>;
-    } else {
-        return null;
-    }
-};
+import Loading from './components/loading/Loading';
 
 const Informasjonstavle = Loadable({
-    loader: () => import('./pages/informasjonstavle/Informasjonstavle'),
+    loader: () =>
+        import('./pages/informasjonstavle/Informasjonstavle' /* webpackChunkName: "informasjonstavle" */),
     loading: Loading
 });
 
 const HvaSøkerDu = Loadable({
-    loader: () => import('./pages/hva-søker-du/HvaSøkerDu'),
+    loader: () => import('./pages/hva-søker-du/HvaSøkerDu' /* webpackChunkName: "hva-soker-du" */),
     loading: Loading
 });
 
 const OmForeldrepenger = Loadable({
-    loader: () => import('./pages/om-foreldrepenger/OmForeldrepenger'),
+    loader: () =>
+        import('./pages/om-foreldrepenger/OmForeldrepenger' /* webpackChunkName: "om-foreldrepenger" */),
     loading: Loading
 });
 
 const OmEngangsstønad = Loadable({
-    loader: () => import('./pages/om-engangsstønad/OmEngangsstønad'),
+    loader: () =>
+        import('./pages/om-engangsstønad/OmEngangsstønad' /* webpackChunkName: "om-engangsstonad" */),
     loading: Loading
 });
 
 const ViktigeFrister = Loadable({
-    loader: () => import('./pages/viktige-frister/ViktigeFrister'),
+    loader: () =>
+        import('./pages/viktige-frister/ViktigeFrister' /* webpackChunkName: "viktige-frister" */),
     loading: Loading
 });
 
 const Blindside = Loadable({
-    loader: () => import('./pages/blindside/Blindside'),
+    loader: () => import('./pages/blindside/Blindside' /* webpackChunkName: "blindside" */),
     loading: Loading
 });
 
