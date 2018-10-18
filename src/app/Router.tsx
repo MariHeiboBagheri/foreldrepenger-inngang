@@ -10,30 +10,30 @@ const Informasjonstavle = Loadable({
     loading: Loading
 });
 
-const HvaSøkerDu = Loadable({
+export const HvaSøkerDu = Loadable({
     loader: () => import('./pages/hva-søker-du/HvaSøkerDu' /* webpackChunkName: "hva-soker-du" */),
     loading: Loading
 });
 
-const OmForeldrepenger = Loadable({
+export const OmForeldrepenger = Loadable({
     loader: () =>
         import('./pages/om-foreldrepenger/OmForeldrepenger' /* webpackChunkName: "om-foreldrepenger" */),
     loading: Loading
 });
 
-const OmEngangsstønad = Loadable({
+export const OmEngangsstønad = Loadable({
     loader: () =>
         import('./pages/om-engangsstønad/OmEngangsstønad' /* webpackChunkName: "om-engangsstonad" */),
     loading: Loading
 });
 
-const ViktigeFrister = Loadable({
+export const ViktigeFrister = Loadable({
     loader: () =>
         import('./pages/viktige-frister/ViktigeFrister' /* webpackChunkName: "viktige-frister" */),
     loading: Loading
 });
 
-const Blindside = Loadable({
+export const Blindside = Loadable({
     loader: () => import('./pages/blindside/Blindside' /* webpackChunkName: "blindside" */),
     loading: Loading
 });

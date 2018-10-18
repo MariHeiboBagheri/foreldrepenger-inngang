@@ -7,8 +7,10 @@ import { getTranslation, IntlProps, withIntl } from '../../../intl/intl';
 import BEMHelper from '../../../utils/bem';
 import externalUrls from '../../../utils/externalUrls';
 import { WithLink } from '../../../utils/withLink';
+import { LoadableComponent } from 'react-loadable';
 
 import './merInformasjon.less';
+import { OmForeldrepenger, OmEngangsstønad } from 'app/Router';
 
 const cls = BEMHelper('merInformasjon');
 
@@ -25,12 +27,14 @@ const MerInformasjon: StatelessComponent<IntlProps> = ({ lang }) => {
                     title={getTranslation('foreldrepenger', lang)}
                     body={getTranslation('informasjonstavle.mer_informasjon.foreldrepenger', lang)}
                     url="/om-foreldrepenger"
+                    preloadableComponent={OmForeldrepenger}
                     urlIsExternal={false}
                 />
                 <MerInformasjonLink
                     title={getTranslation('engangsstønad', lang)}
                     body={getTranslation('informasjonstavle.mer_informasjon.engangsstønad', lang)}
                     url="/om-engangsstonad"
+                    preloadableComponent={OmEngangsstønad}
                     urlIsExternal={false}
                 />
                 <MerInformasjonLink
@@ -51,18 +55,27 @@ const MerInformasjonLink = ({
     title,
     body,
     url,
-    urlIsExternal
+    urlIsExternal,
+    preloadableComponent
 }: {
     title: string;
     body: string;
     url: string;
     urlIsExternal?: boolean;
+    preloadableComponent?: LoadableComponent;
 }) => {
+    const onHover = () => {
+        if (preloadableComponent) {
+            preloadableComponent.preload();
+        }
+    };
+
     return (
         <WithLink
             url={url}
             urlIsExternal={urlIsExternal}
             noStyling={true}
+            onHover={onHover}
             className={cls.element('link')}>
             <div>
                 <TypografiBase type="undertittel">{title}</TypografiBase>

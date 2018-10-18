@@ -10,6 +10,7 @@ import MerInformasjon from './mer-informasjon/MerInformasjon';
 import AndreLenker from './andre-lenker/AndreLenker';
 import './informasjonstavle.less';
 import { StatelessComponent } from 'enzyme';
+import { HvaSøkerDu } from 'app/Router';
 
 const cls = BEMHelper('informasjonstavle');
 
@@ -51,6 +52,7 @@ const BildelenkerWithoutIntl: StatelessComponent<IntlProps> = ({ lang }) => {
             </PanelMedBilde>
             <PanelMedBilde
                 svgName="fylle-ut-søknad"
+                preloadableComponent={HvaSøkerDu}
                 title={getTranslation('informasjonstavle.gå_rett_til_søknaden', lang)}
                 urlIsExternal={false}
                 url="/hva-soker-du">

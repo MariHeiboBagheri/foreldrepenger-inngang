@@ -7,6 +7,7 @@ import BEMHelper from '../../utils/bem';
 import { FlexibleSvg } from '../../utils/CustomSVG';
 import { WithLink } from '../../utils/withLink';
 import './panelMedBilde.less';
+import { LoadableComponent } from 'react-loadable';
 
 const cls = BEMHelper('panelMedBilde');
 
@@ -15,20 +16,28 @@ const PanelMedBilde = ({
     title,
     url,
     urlIsExternal,
+    preloadableComponent,
     children
 }: {
     svgName: any;
     title: string;
     urlIsExternal?: boolean;
     url: string;
+    preloadableComponent?: LoadableComponent;
     children: ReactNode;
 }) => {
     const svgFile = require(`./${svgName}.svg`).default;
+    const onHover = () => {
+        if (preloadableComponent) {
+            preloadableComponent.preload();
+        }
+    };
 
     return (
         <WithLink
             className={cls.className}
             url={url}
+            onHover={onHover}
             noStyling={true}
             urlIsExternal={urlIsExternal}>
             <div className={cls.element('imageOnPanel')}>

@@ -31,6 +31,7 @@ interface Props {
     className?: string;
     style?: any;
     ariaLabel?: string;
+    onHover?: () => void;
     children: ReactNode;
 }
 
@@ -53,6 +54,7 @@ export class WithLink extends React.Component<Props> {
             className,
             style,
             ariaLabel,
+            onHover,
             children
         } = this.props;
 
@@ -112,7 +114,10 @@ export class WithLink extends React.Component<Props> {
             }
         } else {
             return (
-                <Link className={classnames(cls.className, className)} to={url}>
+                <Link
+                    onMouseOver={onHover}
+                    className={classnames(cls.className, className)}
+                    to={url}>
                     {children}
                 </Link>
             );
