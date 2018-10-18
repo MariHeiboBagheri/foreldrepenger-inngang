@@ -11,7 +11,7 @@ const webpackConfig = {
     output: {
         path: path.resolve(__dirname, './../../../dist'),
         filename: 'js/[name].[contenthash].js',
-        chunkFilename: 'js/chunk--[id].[contenthash].js',
+        chunkFilename: 'js/[name].[contenthash].js',
         publicPath: '/dist/'
     },
     resolve: {
@@ -43,12 +43,24 @@ const webpackConfig = {
             }
         ]
     },
+    optimization: {
+        runtimeChunk: 'single',
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendors',
+                    chunks: 'all'
+                }
+            }
+        }
+    },
     plugins: [
         new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /nb|nn|en/),
         new CaseSensitivePathsPlugin(),
         new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash].css',
-            chunkFilename: 'css/chunk--[id].[contenthash].css',
+            chunkFilename: 'css/[name].[contenthash].css',
             disable: false,
             allChunks: true
         }),
