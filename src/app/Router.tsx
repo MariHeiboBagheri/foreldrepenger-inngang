@@ -1,12 +1,45 @@
 import * as React from 'react';
 import { Route, Redirect, Switch, withRouter } from 'react-router-dom';
-import Informasjonstavle from './pages/informasjonstavle/Informasjonstavle';
-import HvaSøkerDu from './pages/hva-søker-du/HvaSøkerDu';
 import SøkForeldrepenger from './pages/søk-foreldrepenger/SøkForeldrepenger';
-import OmForeldrepenger from './pages/om-foreldrepenger/OmForeldrepenger';
-import OmEngangsstønad from './pages/om-engangsstønad/OmEngangsstønad';
-import Blindside from './pages/blindside/Blindside';
-import ViktigeFrister from './pages/viktige-frister/ViktigeFrister';
+import Loadable from 'react-loadable';
+
+const Loading = ({ error }: { error: any }) => {
+    if (error) {
+        return <div>{error}</div>;
+    } else {
+        return null;
+    }
+};
+
+const Informasjonstavle = Loadable({
+    loader: () => import('./pages/informasjonstavle/Informasjonstavle'),
+    loading: Loading
+});
+
+const HvaSøkerDu = Loadable({
+    loader: () => import('./pages/hva-søker-du/HvaSøkerDu'),
+    loading: Loading
+});
+
+const OmForeldrepenger = Loadable({
+    loader: () => import('./pages/om-foreldrepenger/OmForeldrepenger'),
+    loading: Loading
+});
+
+const OmEngangsstønad = Loadable({
+    loader: () => import('./pages/om-engangsstønad/OmEngangsstønad'),
+    loading: Loading
+});
+
+const ViktigeFrister = Loadable({
+    loader: () => import('./pages/viktige-frister/ViktigeFrister'),
+    loading: Loading
+});
+
+const Blindside = Loadable({
+    loader: () => import('./pages/blindside/Blindside'),
+    loading: Loading
+});
 
 const Router = () => (
     <Switch>

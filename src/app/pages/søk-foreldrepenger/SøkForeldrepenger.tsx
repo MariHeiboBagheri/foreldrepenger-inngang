@@ -12,10 +12,10 @@ import Datovelger from './Datovelger';
 import externalUrls from '../../utils/externalUrls';
 import MediaQuery from 'react-responsive';
 import Sidebanner from 'app/components/sidebanner/Sidebanner';
-
-import './søkForeldrepenger.less';
 import StrukturertTekst from 'app/components/strukturert-tekst/StrukturertTekst';
 import { getContent } from 'app/utils/getContent';
+import '../hva-søker-du/hvaSøkerDu.less';
+import './søkForeldrepenger.less';
 
 const hvaSøkerDuCls = BEMHelper('hvaSøkerDu');
 const foreldrepengerCls = BEMHelper('søkForeldrepenger');

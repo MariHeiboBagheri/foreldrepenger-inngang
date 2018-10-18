@@ -7,9 +7,8 @@ import Sidebanner from '../../components/sidebanner/Sidebanner';
 import StrukturertTekst from '../../components/strukturert-tekst/StrukturertTekst';
 // import NårKanDuFåEngangsstønad from './når-kan-du-få-engangsstønad/NårKanDuFåEngangsstønad';
 import { getContent } from '../../utils/getContent';
-import '../infosider.less';
-import './omEngangsstønad.less';
 import CustomSVGFromSprite from '../../utils/CustomSVG';
+import './omEngangsstønad.less';
 
 const infosiderCls = BEMHelper('infosider');
 const cls = BEMHelper('omEngangsstønad');
