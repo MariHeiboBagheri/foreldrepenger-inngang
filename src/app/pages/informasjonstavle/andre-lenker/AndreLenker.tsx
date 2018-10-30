@@ -14,7 +14,7 @@ const links = [
     {
         label: 'informasjonstavle.andre_lenker.meld_fra',
         href:
-            'https://www.nav.no/no/NAV+og+samfunn/Om+NAV/Relatert+informasjon/du-har-plikt-til-%C3%A5-gi-nav-riktige-opplysningerhttps:/www.nav.no/no/NAV+og+samfunn/Om+NAV/Relatert+informasjon/du-har-plikt-til-%C3%A5-gi-nav-riktige-opplysninger'
+            'https://www.nav.no/no/NAV+og+samfunn/Om+NAV/Relatert+informasjon/du-har-plikt-til-%C3%A5-gi-nav-riktige-opplysninger'
     },
     {
         label: 'informasjonstavle.andre_lenker.søke_i_rett_tid',
@@ -24,7 +24,7 @@ const links = [
     {
         label: 'informasjonstavle.andre_lenker.klage',
         href:
-            'https://www.nav.no/no/NAV+og+samfunn/Kontakt+NAV/Klage+ris+og+ros/Klagerettigheterhttps:/www.nav.no/no/NAV+og+samfunn/Kontakt+NAV/Klage+ris+og+ros/Klagerettigheter'
+            'https://www.nav.no/no/NAV+og+samfunn/Kontakt+NAV/Klage+ris+og+ros/Klagerettigheter'
     },
     {
         label: 'informasjonstavle.andre_lenker.regelverk',
