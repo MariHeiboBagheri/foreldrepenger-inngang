@@ -9,3 +9,4 @@ yarn-error.log
 workbench
 .DS_Store
 mock_data/soknad.json
+scripts/output*
